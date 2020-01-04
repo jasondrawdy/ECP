@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16929414-283A-4CA5-82DE-F10744031FEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ECP</RootNamespace>
+    <AssemblyName>ECP</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Networking\ECPServer.cs" />
+    <Compile Include="Networking\ECPClient.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Cipher\AesCtrCryptoTransform.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Cipher\AesFactories.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\CryptoRandom.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\EtM_CBC.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\EtM_CTR.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\EtM_Transforms.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Extensions\B64Extensions.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Extensions\Base16Config.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Extensions\Base16Extensions.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Extensions\Base32Config.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Extensions\Base32Extensions.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Extensions\ByteArrayExtensions.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Extensions\CngKeyExtensions.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Extensions\SerializationExtensions.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Hash\HashFactories.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Kdf\HKDF.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Kdf\PBKDF2.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Kdf\SP800_108_Ctr.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Mac\HMAC2.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Mac\HMACFactories.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Otp\TOTP.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\SuiteB.cs" />
+    <Compile Include="Resources\Dependencies\SecurityDriven.Inferno\Utils.cs" />
+    <Compile Include="Security\ECPGenerators.cs" />
+    <Compile Include="Assembly\ECPEventHandlers.cs" />
+    <Compile Include="Security\ECPBigInteger.cs" />
+    <Compile Include="Security\ECPDiffieHellman.cs" />
+    <Compile Include="Assembly\ECPExtensions.cs" />
+    <Compile Include="Management\ECPLogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Management\ECPThreadManager.cs" />
+    <Compile Include="Objects\ECPUser.cs" />
+    <Compile Include="Objects\ECPThread.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
